@@ -1,17 +1,16 @@
 num_origin = input()
-# input default str
+# str
 
 if len(num_origin) == 1:
     num_origin += '0'
 
-num_temp = num_origin[-1] + str(int(num_origin[0]) + int(num_origin[1]))[-1]
+cycled_num = num_origin[-1] + str(int(num_origin[0]) + int(num_origin[1]))[-1]
 
 cycle = 1
 # already 1 cycled
 
-while str(num_origin) != num_temp:
+while str(num_origin) != cycled_num:
+    cycled_num = cycled_num[-1] + str(int(cycled_num[0]) + int(cycled_num[1]))[-1]
     cycle += 1
-
-    num_temp = num_temp[-1] + str(int(num_temp[0]) + int(num_temp[1]))[-1]
 
 print(cycle)
